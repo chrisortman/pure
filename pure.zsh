@@ -707,7 +707,7 @@ prompt_pure_state_setup() {
 
 	hostname='%F{$prompt_pure_colors[host]}@%m%f'
 	# Show `username@host` if logged in through SSH.
-	[[ -n $ssh_connection && $ssh_connection != "::1 0 ::1 22" ]] && username=' %F{$prompt_pure_colors[user]}%n%f'"$hostname"
+	[[ -n $ssh_connection ]] && username=' %F{$prompt_pure_colors[user]}%n%f'"$hostname"
 
 	# Show `username@host` if inside a container and not in GitHub Codespaces.
 	[[ -z "${CODESPACES}" ]] && prompt_pure_is_inside_container && username=' %F{$prompt_pure_colors[user]}%n%f'"$hostname"
